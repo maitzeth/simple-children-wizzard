@@ -4,7 +4,7 @@ import styled from "styled-components";
 function Wizzard({ children }) {
   const [activePage, setActivePage] = useState(0);
   const totalPages = Children.count(children);
-  const currentPage = children[activePage];
+  const currentPage = Children.toArray(children[activePage]);
 
   const setNextPage = () => {
     setActivePage((index) => index + 1);
